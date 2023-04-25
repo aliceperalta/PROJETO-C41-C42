@@ -89,12 +89,12 @@ function draw() {
 
     kangaroo.collide(invisibleGround);
     //SUBSTITUA O NOME DO GRUPO E DO SPRITE PARA O CORRETO QUANDO OBSTACULOS TOCAM O PROTAGONISTA
-    if(NOMEDOGRUPO.isTouching(SPRITE)){
+    if(obstaclesGroup.isTouching(kangaroo)){
       collidedSound.play();
       gameState = END;
     }
     //SUBSTITUA O NOME DO GRUPO E DO SPRITE PARA O CORRETO QUANDO ARBUSTOS TOCAM O PROTAGONISTA
-    if(NOMEDOGRUPO.isTouching(SPRITE)){
+    if(shrubsGroup.isTouching(kangarro)){
       score = score + 1;
       shrubsGroup.destroyEach();
     }
@@ -199,9 +199,9 @@ function reset(){
   restart.visible = false;
   kangaroo.visible = true;
   //SUBSTITUA PELO NOME CORRETO DO SPRITE E DOS GRUPOS
-  PROTAGONISTA.changeAnimation("running", kangaroo_running);
-  NOMEDOGRUPODEOBSTACULOS.destroyEach();
-  NOMEDOGRUPODEARBUSTOS.destroyEach();
+  kangaroo.changeAnimation("running", kangaroo_running);
+  obstaclesGroup.destroyEach();
+  shrubsGroup.destroyEach();
   
   score = 0;
 }
