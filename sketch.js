@@ -1,4 +1,4 @@
-/*--------------------------------------------------------*/
+/*--------------------------------------------------------*/ //ATIVIDADE NA LINHA 91, 96 E 201
 var PLAY = 1;
 var END = 0;
 var WIN = 2;
@@ -88,13 +88,13 @@ function draw() {
     spawnObstacles();
 
     kangaroo.collide(invisibleGround);
-    //escreva uma condição para que o estado do jogo mude para end (fim).
-    if(){
+    //SUBSTITUA O NOME DO GRUPO E DO SPRITE PARA O CORRETO QUANDO OBSTACULOS TOCAM O PROTAGONISTA
+    if(NOMEDOGRUPO.isTouching(SPRITE)){
       collidedSound.play();
       gameState = END;
     }
-    //escreva uma condição para a pontuação aumentar
-    if(){
+    //SUBSTITUA O NOME DO GRUPO E DO SPRITE PARA O CORRETO QUANDO ARBUSTOS TOCAM O PROTAGONISTA
+    if(NOMEDOGRUPO.isTouching(SPRITE)){
       score = score + 1;
       shrubsGroup.destroyEach();
     }
@@ -198,8 +198,10 @@ function reset(){
   gameOver.visible = false;
   restart.visible = false;
   kangaroo.visible = true;
-  //mude a animação canguru
-  //destrua os arbustos e o grupo de obstáculos
+  //SUBSTITUA PELO NOME CORRETO DO SPRITE E DOS GRUPOS
+  PROTAGONISTA.changeAnimation("running", kangaroo_running);
+  NOMEDOGRUPODEOBSTACULOS.destroyEach();
+  NOMEDOGRUPODEARBUSTOS.destroyEach();
   
   score = 0;
 }
